@@ -9,11 +9,8 @@ import Meses from '../utils/gerenciaMeses'
 
 const baseURL = 'https://mymoney-25404.firebaseio.com/'
 const {useGet, usePost, useDelete, usePatch} = Rest(baseURL)
-const {valorParaNome} = Meses()
 
 const Movimentacoes = ({match}) => {
-  const yup = require('yup')
-
   const data = useGet(`movimentacoes/${match.params.data}`)
   const dataMeses = useGet(`meses/${match.params.data}`)
   const [postData, salvar] = usePost(`movimentacoes/${match.params.data}`)
@@ -66,7 +63,6 @@ const Movimentacoes = ({match}) => {
         valor: Yup
                 .number()
                 .typeError('Valor deve ser um número positivo')
-                .positive('Valor deve ser maior que 0')
                 .required('Este campo é obrigatório')
       });
       await schema.validate(data, {
