@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    .inputError {
+        border-color: red;
+
+        &::placeholder {
+            color: red;
+        }
+    }
+
+    small {
+        color: red;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

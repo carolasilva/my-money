@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Header from './elements/Header'
 import Home from './pages/Home/index'
 import Movimentacoes from './pages/Movimentacoes'
-
+import './styles.scss'
 
 function App() {
 
